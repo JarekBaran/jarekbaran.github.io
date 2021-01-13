@@ -12,13 +12,6 @@
     />
   </head>
   <body>
-    <div id="hamburger" class="scale"></div>
-    <div id="sidebar" class="sidebar">
-      <ul id="menu">
-        <h3>Portfolio</h3>
-      </ul>
-    </div>
-
     <section id="home">
       <div class="left"></div>
 
@@ -93,75 +86,6 @@
 
       .scale:hover {
         transform: scale(0.9);
-      }
-
-      /* MENU */
-
-      #hamburger {
-        position: fixed;
-        top: 2em;
-        right: 2em;
-        width: 3em;
-        height: 3em;
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMmM1LjUxNCAwIDEwIDQuNDg2IDEwIDEwcy00LjQ4NiAxMC0xMCAxMC0xMC00LjQ4Ni0xMC0xMCA0LjQ4Ni0xMCAxMC0xMHptMC0yYy02LjYyNyAwLTEyIDUuMzczLTEyIDEyczUuMzczIDEyIDEyIDEyIDEyLTUuMzczIDEyLTEyLTUuMzczLTEyLTEyLTEyem02IDE3aC0xMnYtMmgxMnYyem0wLTRoLTEydi0yaDEydjJ6bTAtNGgtMTJ2LTJoMTJ2MnoiLz48L3N2Zz4=");
-        background-size: 3em;
-        background-position: center;
-        background-repeat: no-repeat;
-        cursor: pointer;
-        z-index: 8;
-      }
-
-      #hamburger.close {
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMmM1LjUxNCAwIDEwIDQuNDg2IDEwIDEwcy00LjQ4NiAxMC0xMCAxMC0xMC00LjQ4Ni0xMC0xMCA0LjQ4Ni0xMCAxMC0xMHptMC0yYy02LjYyNyAwLTEyIDUuMzczLTEyIDEyczUuMzczIDEyIDEyIDEyIDEyLTUuMzczIDEyLTEyLTUuMzczLTEyLTEyLTEyem02IDE2LjA5NGwtNC4xNTctNC4xMDQgNC4xLTQuMTQxLTEuODQ5LTEuODQ5LTQuMTA1IDQuMTU5LTQuMTU2LTQuMTAyLTEuODMzIDEuODM0IDQuMTYxIDQuMTItNC4xMDQgNC4xNTcgMS44MzQgMS44MzIgNC4xMTgtNC4xNTkgNC4xNDMgNC4xMDIgMS44NDgtMS44NDl6Ii8+PC9zdmc+");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 3em;
-        filter: invert(1);
-        z-index: 9;
-      }
-
-      #sidebar {
-        position: fixed;
-        height: 100vh;
-        color: #fff;
-        background: #000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: 0.5s;
-        padding: 40px;
-        right: -100%;
-        top: 0;
-        z-index: 7;
-      }
-
-      #sidebar.show {
-        right: 0;
-      }
-
-      #menu {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-      }
-
-      #menu li {
-        list-style: none;
-      }
-
-      #menu li a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.6em;
-        margin: 0.5em;
-        font-weight: 300;
-        letter-spacing: 2px;
-        text-transform: capitalize;
-      }
-
-      #menu li a:hover {
-        color: #00bcd4;
       }
 
       /* Sections */
@@ -287,22 +211,5 @@
         }
       }
     </style>
-
-    <script>
-      fetch("https://api.github.com/users/JarekBaran/repos")
-        .then((response) => response.json())
-        .then((data) =>
-          data.map(
-            (repo) =>
-              (menu.innerHTML += `<li><a href="${repo.html_url}" rel="nofollow, noreferrer, noopener" target="_blank">${repo.name}</a></li>`)
-          )
-        )
-        .catch((error) => console.error(error));
-
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("close");
-        sidebar.classList.toggle("show");
-      });
-    </script>
   </body>
 </html>
