@@ -2,7 +2,13 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jarek Baran Portfolio | jarekbaran.dev</title>
+    <meta
+      name="description"
+      content="Szukasz do zespołu osoby na staż, praktykę lub stanowisko juniorskie? Zapraszam do kontaktu."
+    />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       crossorigin
@@ -11,12 +17,10 @@
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex, nofollow" />
   </head>
   <body>
     <header>
-      <h1>Portfolio</h1>
+      <h1 class="title">Portfolio</h1>
     </header>
 
     <aside>
@@ -29,14 +33,14 @@
           <span>Dzień dobry</span>
           , tu
         </p>
-        <h2>Jarek Baran</h2>
-        <p class="subtitle">zdobywam doświadczenie w branży IT...</p>
+        <h2 class="title">Jarek Baran</h2>
+        <p class="subtitle">zdobywam doświadczenie w&nbsp;branży IT...</p>
 
         <div class="content">
           <p>
             Najbardziej
             <strong>
-              zależy mi na dalszym rozwoju i nowych umiejętnościach
+              zależy mi na dalszym rozwoju i&nbsp;nowych umiejętnościach
             </strong>
             .
           </p>
@@ -46,7 +50,12 @@
               szukasz do zespołu osoby na staż, praktykę lub stanowisko
               juniorskie
             </strong>
-            <a href="mailto:jarek@jarekbaran.dev">proszę Cię o kontakt</a>
+            <a
+              title="Tak, skontaktujmy się!"
+              href="mailto:jarek@jarekbaran.dev"
+            >
+              proszę Cię o kontakt
+            </a>
             .
             <strong>Inne propozycje współpracy</strong>
             również będą bardzo mile widziane.
@@ -56,10 +65,11 @@
         <a
           class="btn"
           href="https://github.com/JarekBaran"
+          title="Jarek Baran, własne projekty - repozytoria Git z kodem źródłowym"
           rel="nofollow, noreferrer, noopener"
           target="_blank"
         >
-          Repozytoria GIT z kodami źródłowymi
+          Własne projekty
         </a>
       </article>
     </main>
@@ -69,6 +79,7 @@
         <li>
           <a
             href="https://github.com/JarekBaran"
+            title="Jarek Baran - Profil GitHub"
             rel="nofollow, noreferrer, noopener"
             target="_blank"
           >
@@ -82,6 +93,7 @@
         <li>
           <a
             href="http://stackoverflow.com/u/10946716"
+            title="Jarek Baran - Profil StackOverflow"
             rel="nofollow, noreferrer, noopener"
             target="_blank"
           >
@@ -105,7 +117,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-display: optional;
         color: var(--font_color);
       }
@@ -115,9 +127,9 @@
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 10vh 80vh 10vh;
         grid-template-areas:
-          "aside header"
-          "aside main"
-          "aside footer";
+          'aside header'
+          'aside main'
+          'aside footer';
         grid-column-gap: 3em;
       }
 
@@ -153,7 +165,7 @@
         grid-area: header;
       }
 
-      header h1 {
+      header .title {
         position: absolute;
         top: 1em;
         background: #333;
@@ -177,15 +189,14 @@
         max-width: 38em;
       }
 
-      main article h2 {
+      main article .title {
         line-height: 1em;
         font-size: 3em;
-        margin: 0 0.3em;
       }
 
       main article .subtitle {
         font-size: 1.6em;
-        margin: 0.2em 0;
+        margin: 0.1em 0;
       }
 
       main article .subtitle span {
@@ -246,10 +257,10 @@
           grid-template-columns: 1fr;
           grid-template-rows: 10vh 80vh 10vh 1fr;
           grid-template-areas:
-            "header"
-            "main"
-            "footer"
-            "aside";
+            'header'
+            'main'
+            'footer'
+            'aside';
         }
 
         footer {
@@ -263,24 +274,34 @@
           grid-template-columns: 1fr;
           grid-template-rows: 100px auto 85px auto;
           grid-template-areas:
-            "header"
-            "main"
-            "footer"
-            "aside";
+            'header'
+            'main'
+            'footer'
+            'aside';
+        }
+
+        main article .title {
+          font-size: 2.6em;
+        }
+
+        main article .btn {
+          width: 100%;
+          margin: 1em 0 3em 0;
+          text-align: center;
         }
       }
     </style>
 
     <script>
-      let list = document.querySelector(".list");
+      let list = document.querySelector('.list');
 
-      fetch("https://api.github.com/users/JarekBaran/repos")
+      fetch('https://api.github.com/users/JarekBaran/repos')
         .then((response) => response.json())
         .then((data) => {
           let repos = ``;
           data.map(
             (repo) =>
-              (repos += `<li><a href="${repo.html_url}" rel="nofollow, noreferrer, noopener" target="_blank">${repo.name}</a><p>${repo.description}</p></li>`)
+              (repos += `<li><a title="${repo.description}" href="${repo.html_url}" rel="nofollow, noreferrer, noopener" target="_blank">${repo.name}</a><p>${repo.description}</p></li>`)
           );
           list.innerHTML = repos;
         })
