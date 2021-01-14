@@ -2,14 +2,17 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jarek Baran Portfolio | jarekbaran.dev</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
-      rel="stylesheet"
+      crossorigin
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
   </head>
   <body>
     <header>
@@ -17,29 +20,47 @@
     </header>
 
     <aside>
-      <ul class="repos"></ul>
+      <ul class="list"></ul>
     </aside>
 
     <main>
       <article>
-        <p class="subtitle"><span>Dzień dobry</span>, tu</p>
-        <h2>Jarek Baran</h2>
-        <p class="subtitle">szukam doświadczenia w branży IT</p>
-        <p>
-          Najbardziej
-          <strong>zależy mi na rozwoju i nowych umiejętnościach</strong>. Jeśli
-          <strong>szukasz osoby do zespołu</strong> na staż, praktykę lub
-          stanowisko juniorskie
-          <a href="mailto:praca@jarekbaran.dev">proszę o kontakt</a>. Inne
-          propozycje współpracy będą również bardzo mile widziane.
+        <p class="subtitle">
+          <span>Dzień dobry</span>
+          , tu
         </p>
+        <h2>Jarek Baran</h2>
+        <p class="subtitle">zdobywam doświadczenie w branży IT...</p>
+
+        <div class="content">
+          <p>
+            Najbardziej
+            <strong>
+              zależy mi na dalszym rozwoju i nowych umiejętnościach
+            </strong>
+            .
+          </p>
+          <p>
+            Jeśli
+            <strong>
+              szukasz do zespołu osoby na staż, praktykę lub stanowisko
+              juniorskie
+            </strong>
+            <a href="mailto:jarek@jarekbaran.dev">proszę Cię o kontakt</a>
+            .
+            <strong>Inne propozycje współpracy</strong>
+            również będą bardzo mile widziane.
+          </p>
+        </div>
+
         <a
           class="btn"
           href="https://github.com/JarekBaran"
           rel="nofollow, noreferrer, noopener"
           target="_blank"
-          >Repozytoria z kodem źródłowym</a
         >
+          Repozytoria GIT z kodami źródłowymi
+        </a>
       </article>
     </main>
 
@@ -50,22 +71,26 @@
             href="https://github.com/JarekBaran"
             rel="nofollow, noreferrer, noopener"
             target="_blank"
-            ><img
+          >
+            <img
               src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMmM1LjUxNCAwIDEwIDQuNDg2IDEwIDEwcy00LjQ4NiAxMC0xMCAxMC0xMC00LjQ4Ni0xMC0xMCA0LjQ4Ni0xMCAxMC0xMHptMC0yYy02LjYyNyAwLTEyIDUuMzczLTEyIDEyczUuMzczIDEyIDEyIDEyIDEyLTUuMzczIDEyLTEyLTUuMzczLTEyLTEyLTEyem0wIDZjLTMuMzEzIDAtNiAyLjY4Ni02IDYgMCAyLjY1MSAxLjcxOSA0LjkgNC4xMDQgNS42OTMuMy4wNTYuMzk2LS4xMy4zOTYtLjI4OXYtMS4xMTdjLTEuNjY5LjM2My0yLjAxNy0uNzA3LTIuMDE3LS43MDctLjI3Mi0uNjkzLS42NjYtLjg3OC0uNjY2LS44NzgtLjU0NC0uMzczLjA0MS0uMzY1LjA0MS0uMzY1LjYwMy4wNDIuOTIuNjE5LjkyLjYxOS41MzUuOTE3IDEuNDAzLjY1MiAxLjc0Ni40OTkuMDU0LS4zODguMjA5LS42NTIuMzgxLS44MDItMS4zMzMtLjE1Mi0yLjczMy0uNjY3LTIuNzMzLTIuOTY1IDAtLjY1NS4yMzQtMS4xOS42MTgtMS42MS0uMDYyLS4xNTMtLjI2OC0uNzY0LjA1OC0xLjU5IDAgMCAuNTA0LS4xNjEgMS42NS42MTUuNDc5LS4xMzMuOTkyLS4xOTkgMS41MDItLjIwMi41MS4wMDIgMS4wMjMuMDY5IDEuNTAzLjIwMiAxLjE0Ni0uNzc2IDEuNjQ4LS42MTUgMS42NDgtLjYxNS4zMjcuODI2LjEyMSAxLjQzNy4wNiAxLjU4OC4zODUuNDIuNjE3Ljk1NS42MTcgMS42MSAwIDIuMzA1LTEuNDA0IDIuODEyLTIuNzQgMi45Ni4yMTYuMTg2LjQxMi41NTEuNDEyIDEuMTExdjEuNjQ2YzAgLjE2LjA5Ni4zNDcuNC4yODggMi4zODMtLjc5MyA0LjEtMy4wNDEgNC4xLTUuNjkxIDAtMy4zMTQtMi42ODctNi02LTZ6Ii8+PC9zdmc+"
               alt="Jarek Baran - Profil GitHub"
-            />GitHub</a
-          >
+            />
+            GitHub
+          </a>
         </li>
         <li>
           <a
             href="http://stackoverflow.com/u/10946716"
             rel="nofollow, noreferrer, noopener"
             target="_blank"
-            ><img
+          >
+            <img
               src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMmM1LjUxNCAwIDEwIDQuNDg2IDEwIDEwcy00LjQ4NiAxMC0xMCAxMC0xMC00LjQ4Ni0xMC0xMCA0LjQ4Ni0xMCAxMC0xMHptMC0yYy02LjYyNyAwLTEyIDUuMzczLTEyIDEyczUuMzczIDEyIDEyIDEyIDEyLTUuMzczIDEyLTEyLTUuMzczLTEyLTEyLTEyem0xLjUgMTYuNWgtNXYtMWg1djF6bTMtNS44MzJsLS44MTEtNC42NjgtLjk5Ni4xNzMuODEgNC42NjguOTk3LS4xNzN6bS0yLjk4MiAzLjQ2OGwtNC44NzMtLjQ4OC0uMDkzIDEuMDA4IDQuODc4LjQzOS4wODgtLjk1OXptLjI2OS0xLjI5M2wtNC42MzktMS4zMDQtLjI2My45NzcgNC42NTMgMS4yNS4yNDktLjkyM3ptLjYwMi0xLjIwN2wtNC4xNDktMi40MzItLjUxNC44NzEgNC4xNDggMi40MzMuNTE1LS44NzJ6bS45MzMtLjczNGwtMi42Ny0zLjkxNC0uODM2LjU2OSAyLjY3IDMuOTE1LjgzNi0uNTd6bS0xLjMyMiAyLjA5OHY0aC02di00aC0xdjVoOHYtNWgtMXoiLz48L3N2Zz4="
               alt="Jarek Baran - Profil StackOverflow"
-            />StackOverflow</a
-          >
+            />
+            StackOverflow
+          </a>
         </li>
       </ul>
     </footer>
@@ -91,6 +116,17 @@
         min-height: 100vh;
       }
 
+      p {
+        font-size: 1em;
+        line-height: 1.5em;
+        font-weight: 300;
+        margin: 0.6em 0;
+      }
+
+      strong {
+        font-weight: 500;
+      }
+
       /* Aside */
 
       aside {
@@ -109,7 +145,7 @@
         margin: 3em;
       }
 
-      h1 {
+      header h1 {
         position: absolute;
         top: 2em;
         background: #333;
@@ -129,41 +165,37 @@
         margin: 3em;
       }
 
-      article {
+      main article {
         max-width: 38em;
       }
 
-      h2 {
+      main article h2 {
         line-height: 0.8em;
         font-size: 3em;
+        margin: 0 0.3em;
       }
 
-      .subtitle {
+      main article .subtitle {
         font-size: 1.6em;
+        margin: 0.2em 0;
       }
 
-      .subtitle span {
+      main article .subtitle span {
         color: #00bcd4;
         font-weight: 700;
       }
 
-      p {
-        font-size: 1.1em;
-        font-weight: 300;
+      main article .content {
+        margin: 1em 0;
         text-align: justify;
-        margin: 0.6em 0;
       }
 
-      p a {
+      main article .content a {
         color: #00bcd4;
         font-weight: 500;
       }
 
-      strong {
-        font-weight: 500;
-      }
-
-      .btn {
+      main article .btn {
         display: inline-block;
         color: #fff;
         font-weight: 500;
@@ -181,26 +213,26 @@
         padding-left: 3em;
       }
 
-      .social-media {
+      footer .social-media {
         display: flex;
       }
 
-      .social-media li {
+      footer .social-media li {
         margin-right: 0.5em;
         list-style: none;
       }
 
-      .social-media li a {
+      footer .social-media li a {
         display: inline-flex;
         text-decoration: none;
         align-items: center;
       }
 
-      .social-media li a:hover {
+      footer .social-media li a:hover {
         color: #00bcd4;
       }
 
-      .social-media li a img {
+      footer .social-media li a img {
         padding: 0.5em;
         opacity: 0.7;
         width: 4em;
@@ -220,16 +252,18 @@
     </style>
 
     <script>
-      let repos = document.querySelector(".repos");
+      let list = document.querySelector(".list");
 
       fetch("https://api.github.com/users/JarekBaran/repos")
         .then((response) => response.json())
-        .then((data) =>
+        .then((data) => {
+          let repos = ``;
           data.map(
             (repo) =>
-              (repos.innerHTML += `<li><a href="${repo.html_url}" rel="nofollow, noreferrer, noopener" target="_blank">${repo.name}</a><p>${repo.description}</p></li>`)
-          )
-        )
+              (repos += `<li><a href="${repo.html_url}" rel="nofollow, noreferrer, noopener" target="_blank">${repo.name}</a><p>${repo.description}</p></li>`)
+          );
+          list.innerHTML = repos;
+        })
         .catch((error) => console.error(error));
     </script>
   </body>
