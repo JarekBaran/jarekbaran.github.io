@@ -117,7 +117,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-display: optional;
         color: var(--font_color);
       }
@@ -127,9 +127,9 @@
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 10vh 80vh 10vh;
         grid-template-areas:
-          'aside header'
-          'aside main'
-          'aside footer';
+          "aside header"
+          "aside main"
+          "aside footer";
         grid-column-gap: 3em;
       }
 
@@ -157,6 +157,10 @@
         justify-content: center;
         background-color: #fafbfc;
         padding: 4em;
+      }
+
+      aside a {
+        text-transform: capitalize;
       }
 
       /* Header */
@@ -257,10 +261,10 @@
           grid-template-columns: 1fr;
           grid-template-rows: 10vh 80vh 10vh 1fr;
           grid-template-areas:
-            'header'
-            'main'
-            'footer'
-            'aside';
+            "header"
+            "main"
+            "footer"
+            "aside";
         }
 
         footer {
@@ -274,10 +278,10 @@
           grid-template-columns: 1fr;
           grid-template-rows: 100px auto 85px auto;
           grid-template-areas:
-            'header'
-            'main'
-            'footer'
-            'aside';
+            "header"
+            "main"
+            "footer"
+            "aside";
         }
 
         main article .title {
@@ -293,15 +297,35 @@
     </style>
 
     <script>
-      let list = document.querySelector('.list');
+      let list = document.querySelector(".list");
 
-      fetch('https://api.github.com/users/JarekBaran/repos')
+      fetch("https://api.github.com/users/JarekBaran/repos")
         .then((response) => response.json())
         .then((data) => {
           let repos = ``;
           data.map(
             (repo) =>
-              (repos += `<li><a title="${repo.description}" href="${repo.html_url}" rel="nofollow, noreferrer, noopener" target="_blank">${repo.name}</a><p>${repo.description}</p></li>`)
+              (repos += `
+                <li>
+                  <a
+                  title="${repo.description}"
+                  href="${repo.homepage || repo.html_url}"
+                  rel="nofollow, noreferrer, noopener"
+                  target="_blank"
+                  >
+                    ${repo.name}
+                  </a>
+                  &nbsp;/&nbsp;
+                  <a
+                  title="${repo.full_name} source code git repository"
+                  href="${repo.html_url}"
+                  rel="nofollow, noreferrer, noopener"
+                  target="_blank"
+                  >
+                    source code
+                  </a>
+                  <p>${repo.description}</p></li>
+              `)
           );
           list.innerHTML = repos;
         })
