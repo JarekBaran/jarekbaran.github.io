@@ -81,9 +81,11 @@
 
     <style>
       :root {
+        --base_size: 16px;
+        --base_color: #333;
+        --background-color: #fff;
         --primary_color: #024d9e;
-        --font_color: #333;
-        --font_size: 16px;
+        --second_color: #fafbfc;
       }
 
       *,
@@ -94,8 +96,8 @@
         box-sizing: border-box;
         font-family: "Poppins", sans-serif;
         font-display: optional;
-        color: var(--font_color);
-        font-size: var(--font_size);
+        font-size: var(--base_size);
+        color: var(--base_color);
       }
 
       body {
@@ -107,6 +109,7 @@
           "aside main"
           "aside footer";
         grid-column-gap: 3rem;
+        background-color: var(--background-color);
       }
 
       p {
@@ -131,7 +134,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #fafbfc;
+        background-color: var(--second_color);
         padding: 4rem;
       }
 
@@ -148,8 +151,8 @@
       header .title {
         position: absolute;
         top: 1em;
-        background: #333;
-        color: #fff;
+        background: var(--base_color);
+        color: var(--background-color);
         font-size: 1.8rem;
         letter-spacing: 2px;
         padding: 0 0.5em;
@@ -169,7 +172,7 @@
         max-width: 46rem;
         padding: 2rem 3rem;
         margin-bottom: 2rem;
-        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2), -1px -1px 2px #e2e2e2, 1px 1px 2px #ececec;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2), -1px -1px 2px var(--background-color), 1px 1px 2px var(--second_color);
       }
 
       main article .title {
@@ -199,7 +202,7 @@
 
       main article .btn {
         display: inline-block;
-        color: #fff;
+        color: var(--background-color);
         font-weight: 500;
         letter-spacing: 2px;
         text-decoration: none;
