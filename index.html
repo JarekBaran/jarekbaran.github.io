@@ -74,7 +74,9 @@
           <p>
             Jeśli
             <strong>szukasz do zespołu osoby na staż, praktykę lub stanowisko juniorskie </strong>
-            <a title="Tak, skontaktujmy się!" href="mailto:jarek@jarekbaran.dev">proszę Cię o kontakt</a>.
+            <a class="red underline" title="Tak, skontaktujmy się!" href="mailto:jarek@jarekbaran.dev"
+              >proszę o kontakt</a
+            >.
             <strong>Inne propozycje współpracy</strong>
             również będą mile widziane.
           </p>
@@ -91,6 +93,7 @@
       <div class="boxes">
         <figure class="card scale">
           <a
+            class="underline"
             href="http://cynklak.pl"
             title="Cynklak - Malarnia proszkowa"
             rel="nofollow, noreferrer, noopener"
@@ -102,6 +105,7 @@
         </figure>
         <figure class="card scale">
           <a
+            class="underline"
             href="http://zapleczefarmera.pl"
             title="ZapleczeFarmera - Dystrybutor maszyn rolniczych"
             rel="nofollow, noreferrer, noopener"
@@ -116,6 +120,7 @@
         </figure>
         <figure class="card scale">
           <a
+            class="underline"
             href="https://www.kasjo-pur.pl"
             title="Kasjo-PUR - Ocieplenia pianką poliuretanową"
             rel="nofollow, noreferrer, noopener"
@@ -130,6 +135,7 @@
         </figure>
         <figure class="card scale">
           <a
+            class="underline"
             href="https://noi.com.pl"
             title="NOI - Nowoczesne Obiekty Inwentarskie"
             rel="nofollow, noreferrer, noopener"
@@ -184,6 +190,7 @@
         --background-color: #fff;
         --primary_color: #024d9e;
         --second_color: #fafbfc;
+        --hover_color: #ff0000;
       }
 
       *,
@@ -223,8 +230,18 @@
         font-weight: 700;
       }
 
+      a {
+        position: relative;
+        text-decoration: none;
+        color: var(--base_color);
+      }
+
       a:hover {
         color: var(--primary_color);
+      }
+
+      a.red:hover {
+        color: var(--hover_color);
       }
 
       /* Aside */
@@ -239,39 +256,7 @@
       }
 
       #repozytoria a {
-        position: relative;
-        text-decoration: none;
         text-transform: capitalize;
-      }
-
-      #repozytoria a:nth-child(odd):hover {
-        color: var(--primary_color);
-      }
-
-      #repozytoria a:nth-child(even):hover {
-        color: red;
-      }
-
-      #repozytoria a::after {
-        content: '';
-        width: 0;
-        height: 2px;
-        position: absolute;
-        left: 0px;
-        bottom: -6px;
-        transition: 0.3s;
-      }
-
-      #repozytoria a:hover::after {
-        width: 100%;
-      }
-
-      #repozytoria a:nth-child(odd)::after {
-        background-color: var(--primary_color);
-      }
-
-      #repozytoria a:nth-child(even)::after {
-        background-color: red;
       }
 
       /* Header */
@@ -342,7 +327,7 @@
         text-decoration: none;
         background: var(--primary_color);
         padding: 0.8rem 1rem;
-        margin: 0.4rem 0;
+        margin: 0.4rem -0.7rem;
       }
 
       #home .box {
@@ -443,10 +428,30 @@
 
       .scale {
         transition: 0.3s;
+        transform: scale(0.9);
       }
 
       .scale:hover {
-        transform: scale(1.1);
+        transform: scale(1);
+      }
+
+      .underline::after {
+        content: '';
+        width: 0;
+        height: 2px;
+        position: absolute;
+        left: 0px;
+        bottom: -6px;
+        transition: 0.3s;
+        background-color: var(--primary_color);
+      }
+
+      .underline:hover::after {
+        width: 100%;
+      }
+
+      .red.underline::after {
+        background-color: var(--hover_color);
       }
 
       @media only screen and (max-width: 1366px) {
@@ -507,6 +512,7 @@
               (repos += `
                 <li>
                   <a
+                  class="underline"
                   title="${repo.description}"
                   href="${repo.homepage || repo.html_url}"
                   rel="nofollow, noreferrer, noopener"
@@ -516,6 +522,7 @@
                   </a>
                   &nbsp;/&nbsp;
                   <a
+                  class="red underline"
                   title="${repo.full_name} source code git repository"
                   href="${repo.html_url}"
                   rel="nofollow, noreferrer, noopener"
