@@ -62,34 +62,40 @@
 
     <main>
       <section id="home" class="card">
-        <p class="subtitle"> <span>Dzień dobry</span>, tu</p>
+        <p class="subtitle">
+          <span>Dzień dobry</span>
+          , tu
+        </p>
         <h2 class="title">Jarek Baran</h2>
         <p class="subtitle">zdobywam doświadczenie w&nbsp;branży IT...</p>
 
         <div class="content">
           <p>
             Najbardziej
-            <strong>zależy mi na dalszym rozwoju i&nbsp;nowych umiejętnościach</strong>.
+            <strong>zależy mi na dalszym rozwoju i&nbsp;nowych umiejętnościach</strong>
+            .
           </p>
           <p>
             Jeśli
-            <strong>szukasz do zespołu osoby na staż, praktykę lub stanowisko juniorskie </strong>
-            <a class="red underline" title="Tak, skontaktujmy się!" href="mailto:jarek@jarekbaran.dev"
-              >proszę o kontakt</a
-            >.
+            <strong>szukasz do zespołu osoby na staż, praktykę lub stanowisko juniorskie</strong>
+            <a class="red underline" title="Tak, skontaktujmy się!" href="mailto:jarek@jarekbaran.dev">
+              proszę o kontakt
+            </a>
+            .
             <strong>Inne propozycje współpracy</strong>
             również będą mile widziane.
           </p>
         </div>
 
-        <a class="btn scale" href="#portfolio" title="Jarek Baran - Portfolio stron WWW"> Portfolio stron WWW </a>
-        <!-- <div class="box left"></div>
-        <div class="box right"></div> -->
+        <a class="btn scale" href="#portfolio" title="Jarek Baran - Portfolio stron WWW">Portfolio stron WWW</a>
+        <div class="box left"></div>
+        <div class="box right"></div>
       </section>
     </main>
 
     <section id="portfolio">
       <h2 class="title">Portfolio stron WWW</h2>
+      <div class="line"></div>
       <div class="boxes">
         <figure class="card scale">
           <a
@@ -152,6 +158,7 @@
       <ul class="social-media">
         <li>
           <a
+            class="red"
             href="https://github.com/JarekBaran"
             title="Jarek Baran - Profil GitHub"
             rel="nofollow, noreferrer, noopener"
@@ -327,7 +334,7 @@
         text-decoration: none;
         background: var(--primary_color);
         padding: 0.8rem 1rem;
-        margin: 0.4rem -0.7rem;
+        margin: 0.3rem -0.7rem 0.9rem;
       }
 
       #home .box {
@@ -338,15 +345,59 @@
       }
 
       #home .box.left {
-        background: linear-gradient(to left bottom, rgba(255, 255, 255, 0.1), rgba(0, 77, 158, 0.7));
+        background: linear-gradient(to left bottom, rgba(255, 255, 255, 0.1), rgba(230, 0, 30, 0.8));
         bottom: -3rem;
         left: -3rem;
+        animation: left-box 43s linear infinite;
+      }
+
+      @keyframes left-box {
+        0%,
+        70% {
+          transform: translateX(0px);
+        }
+        20% {
+          transform: translateX(500px);
+        }
+        35% {
+          transform: translateX(150px);
+        }
+        50% {
+          transform: translateX(650px);
+        }
+        85% {
+          transform: translateY(-300px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
       }
 
       #home .box.right {
         background: linear-gradient(to right top, rgba(255, 255, 255, 0.1), rgba(0, 77, 158, 0.7));
         top: -3rem;
         right: -3rem;
+        animation: right-box 33s linear infinite;
+      }
+
+      @keyframes right-box {
+        0%,
+        20%,
+        100% {
+          transform: translateY(0px);
+        }
+        10% {
+          transform: translateY(220px);
+        }
+        40% {
+          transform: translateX(-450px);
+        }
+        60% {
+          transform: translateX(0px);
+        }
+        80% {
+          transform: translateY(370px);
+        }
       }
 
       /* Sections */
@@ -361,8 +412,16 @@
       }
 
       #portfolio .title {
+        position: relative;
         font-size: 2.2rem;
-        margin: 1rem auto;
+        margin: 1rem auto 0.5rem;
+      }
+
+      #portfolio .line {
+        content: '';
+        width: 7rem;
+        height: 0.2rem;
+        background-color: var(--hover_color);
       }
 
       #portfolio .boxes {
@@ -469,6 +528,12 @@
         footer {
           margin: 0 auto;
           padding: 0;
+        }
+      }
+
+      @media only screen and (max-width: 870px) {
+        #home .box {
+          display: none;
         }
       }
 
